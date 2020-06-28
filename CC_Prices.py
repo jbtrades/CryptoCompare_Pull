@@ -1,13 +1,10 @@
-
-names = ["BTC",	"ETH",	"XRP",	"LTC",	"REP",	"BCH",  "XMR",  "ETC"]
-
 import pandas as pd
 import requests
 import dateutil.parser
 
-#replace 552 in URL to number of days to retrieve start from your to_date"
+names = ["BTC",	"ETH",	"XRP",	"LTC",	"REP",	"BCH",  "XMR",  "ETC"]
 
-
+#replace "552" in URL to X number of days to retrieve from your end date"
 def get_data(ticker,date):
     """ Query the API for X days historical price data starting from "date". """
     url = "https://min-api.cryptocompare.com/data/histoday?fsym={}&tsym=USD&limit=552&toTs={}".format(ticker,date)
@@ -41,4 +38,4 @@ d_t = dateutil.parser.parse(to_date, dayfirst=False).timestamp()
 tickers = names
 df = get_df(tickers, d_f, d_t)
 
-df.to_csv(r'C:\xxxx/xxx\xxx/xxx.csv')
+df.to_csv(r'path///.csv')
